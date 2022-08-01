@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.min.js"
+        integrity="sha512-8Y8eGK92dzouwpROIppwr+0kPauu0qqtnzZZNEF8Pat5tuRNJxJXCkbQfJ0HlUG3y1HB3z18CSKmUo7i2zcPpg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="card-body">
+        <div class="card-title">
+            <div class="col">
+                <h1>Currency Exchange</h1>
+            </div>
+        </div>
+        <div class="justify-content-center">
+            <label class="form-label">Amount</label>
+            <p>
+                <span data-th-text="${fromCurry}"></span> <span data-th-text="${currency.query.amount}"></span>
+            </p>
+            <br />
+            <label class="form-label">Converted Amount</label>
+            <p>
+                <span data-th-text="${toCurry}"></span> <span data-th-text="${currency.result}"></span>
+            </p>
+            <br />
+            <form method="GET" action="/">
+                <button type="submit" class="btn btn-warning btn-lg">Back</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

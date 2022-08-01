@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0/js/bootstrap.min.js" 
+    integrity="sha512-8Y8eGK92dzouwpROIppwr+0kPauu0qqtnzZZNEF8Pat5tuRNJxJXCkbQfJ0HlUG3y1HB3z18CSKmUo7i2zcPpg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" 
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Exchange App</h1>
+        <div class="row mt-5">
+            <div class ="col">
+                <form method="GET" action="exchange">
+                    <div class ="input-group">
+                        <select name="from" id="from">
+                            <option  th:each="symbol, iterStat : ${countrySymbols}" th:value="${symbol}" th:text="${countryName[iterStat.index]}"></option>
+                          </select>
+                          <select name="to" id="to">
+                            <option  th:each="symbol, iterStat : ${countrySymbols}" th:value="${symbol}" th:text="${countryName[iterStat.index]}"></option>
+                          </select>
+                        <input type="text" name="amount" id="amount"
+                            class="form-control" required
+                            placeholder="Enter amount">
+                            <button type="submit" class="'btn btn-warning btn-lg">
+                                <i class="fa solid fa-magnifying-glass"></i>
+                            </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
